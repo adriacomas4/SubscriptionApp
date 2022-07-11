@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\testTDD\testTDD.vbproj" />
+    <ProjectReference Include="..\testTDD\SubscriptionApp.vbproj" />
   </ItemGroup>
 
 </Project>
