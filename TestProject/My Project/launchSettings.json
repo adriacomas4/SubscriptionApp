@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TestProject": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\acomas\\OneDrive - Global Software Partner S.L\\Escritorio\\TestTDD"
+    }
+  }
+}
