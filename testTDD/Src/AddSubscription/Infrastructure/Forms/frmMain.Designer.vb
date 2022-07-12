@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class frmMain
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -27,7 +27,8 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.txtSubs = New System.Windows.Forms.TextBox()
+        Me.numQuantity = New System.Windows.Forms.NumericUpDown()
+        CType(Me.numQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -76,19 +77,19 @@ Partial Class Form1
         Me.Button2.Text = "Consultar"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'txtSubs
+        'numQuantity
         '
-        Me.txtSubs.Location = New System.Drawing.Point(145, 94)
-        Me.txtSubs.Name = "txtSubs"
-        Me.txtSubs.Size = New System.Drawing.Size(125, 27)
-        Me.txtSubs.TabIndex = 6
+        Me.numQuantity.Location = New System.Drawing.Point(145, 95)
+        Me.numQuantity.Name = "numQuantity"
+        Me.numQuantity.Size = New System.Drawing.Size(150, 27)
+        Me.numQuantity.TabIndex = 7
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(336, 242)
-        Me.Controls.Add(Me.txtSubs)
+        Me.Controls.Add(Me.numQuantity)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -96,6 +97,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Button1)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        CType(Me.numQuantity, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -106,5 +108,5 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Button2 As Button
-    Friend WithEvents txtSubs As TextBox
+    Friend WithEvents numQuantity As NumericUpDown
 End Class

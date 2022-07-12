@@ -1,6 +1,6 @@
 ﻿Imports System.Data.Sql
 Imports System.Data.SqlClient
-Public Class Form1
+Public Class frmMain
 
     Private _conn
     Sub New()
@@ -8,7 +8,7 @@ Public Class Form1
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        _conn = New DBConnection("data source=localhost;initial catalog=testCodely;persist security info=True; Integrated Security=SSPI;")
+        _conn = New DBConnection()
         OnLoad()
     End Sub
 
@@ -19,19 +19,19 @@ Public Class Form1
 
     Private Sub emplenarComboEmpreses()
         Dim query = "SELECT Name FROM Empreses"
-        Dim ds As DataTable = _conn.doQuery(query)
+        Dim ds As DataTable = _conn.doSelectQuery(query)
         cmbEmpreses.DataSource = ds
         cmbEmpreses.DisplayMember = "Name"
         cmbEmpreses.ValueMember = "Name"
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim empresa = cmbEmpreses.SelectedValue.ToString
-        Dim quantitat = txtSubs.Text
-        addSubscription(empresa, quantitat)
+        Dim empresa As String = cmbEmpreses.SelectedValue.ToString
+        Dim quantitat As Integer = numQuantity.Value
+        Dim addsub = New addSubscriptionToBusiness(New VOEmpreses(empresa), New VOSubscripcions(quantitat))
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEmpreses.SelectedIndexChanged
-
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        frmConsult.Show()
     End Sub
 End Class
