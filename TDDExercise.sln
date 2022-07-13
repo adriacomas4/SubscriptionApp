@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "TestProject", "TestProject\TestProject.vbproj", "{CA445CC6-8724-4E0F-8CED-F3994DD146E7}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SubscriptionApp", "testTDD\SubscriptionApp.vbproj", "{AE8ABE2A-AAF8-4208-B244-5B70316F2BA3}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SubscriptionApp", "App\SubscriptionApp.vbproj", "{AE8ABE2A-AAF8-4208-B244-5B70316F2BA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
