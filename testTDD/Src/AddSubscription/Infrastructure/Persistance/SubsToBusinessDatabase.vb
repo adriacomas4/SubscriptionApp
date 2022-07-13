@@ -6,8 +6,8 @@
         _conn = New DBConnection()
     End Sub
 
-    Public Sub add(name As String, quantity As Integer) Implements SubsToBusinessRepository.add
-        Dim result = _conn.doUpdateQuery($"UPDATE Empreses SET quantity = quantity + {quantity} WHERE Name = '{name}'")
+    Public Sub Add(Id As Integer, quantity As Integer) Implements SubsToBusinessRepository.Add
+        Dim result = _conn.DoInsertUpdateQuery($"UPDATE Empreses SET quantity = quantity + {quantity} WHERE id = '{Id}'")
         If result = 1 Then
             MsgBox("Actualitzat")
         End If

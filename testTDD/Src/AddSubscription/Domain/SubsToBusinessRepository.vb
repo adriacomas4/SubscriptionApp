@@ -1,3 +1,3 @@
 ﻿Public Interface SubsToBusinessRepository
-    Sub add(empresa As String, quantitat As Integer)
+    Sub Add(Id As Integer, quantitat As Integer)
 End Interface

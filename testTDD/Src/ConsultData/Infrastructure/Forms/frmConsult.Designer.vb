@@ -28,10 +28,13 @@ Partial Class frmConsult
         '
         'grdDatos
         '
+        Me.grdDatos.AllowUserToAddRows = False
+        Me.grdDatos.AllowUserToDeleteRows = False
         Me.grdDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grdDatos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grdDatos.Location = New System.Drawing.Point(0, 0)
         Me.grdDatos.Name = "grdDatos"
+        Me.grdDatos.ReadOnly = True
         Me.grdDatos.RowHeadersWidth = 51
         Me.grdDatos.RowTemplate.Height = 29
         Me.grdDatos.Size = New System.Drawing.Size(800, 450)

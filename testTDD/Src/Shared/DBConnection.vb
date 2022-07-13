@@ -17,10 +17,10 @@ Public Class DBConnection
         Return result
     End Function
 
-    Public Function doUpdateQuery(queryUpdate As String) As Integer
+    Public Function DoInsertUpdateQuery(query As String) As Integer
         Dim result As Integer
         _connection.Open()
-        Using cmd As SqlCommand = New SqlCommand(queryUpdate, _connection)
+        Using cmd As SqlCommand = New SqlCommand(query, _connection)
             result = cmd.ExecuteNonQuery
         End Using
         _connection.Close()

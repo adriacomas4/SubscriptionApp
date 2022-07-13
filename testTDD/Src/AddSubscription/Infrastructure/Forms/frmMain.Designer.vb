@@ -28,6 +28,7 @@ Partial Class frmMain
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.numQuantity = New System.Windows.Forms.NumericUpDown()
+        Me.lblDisp = New System.Windows.Forms.Label()
         CType(Me.numQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -84,18 +85,29 @@ Partial Class frmMain
         Me.numQuantity.Size = New System.Drawing.Size(150, 27)
         Me.numQuantity.TabIndex = 7
         '
-        'Form1
+        'lblDisp
+        '
+        Me.lblDisp.AutoSize = True
+        Me.lblDisp.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblDisp.ForeColor = System.Drawing.Color.Red
+        Me.lblDisp.Location = New System.Drawing.Point(53, 135)
+        Me.lblDisp.Name = "lblDisp"
+        Me.lblDisp.Size = New System.Drawing.Size(0, 15)
+        Me.lblDisp.TabIndex = 8
+        '
+        'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(336, 242)
+        Me.Controls.Add(Me.lblDisp)
         Me.Controls.Add(Me.numQuantity)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cmbEmpreses)
         Me.Controls.Add(Me.Button1)
-        Me.Name = "Form1"
+        Me.Name = "frmMain"
         Me.Text = "Form1"
         CType(Me.numQuantity, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -109,4 +121,5 @@ Partial Class frmMain
     Friend WithEvents Label2 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents numQuantity As NumericUpDown
+    Friend WithEvents lblDisp As Label
 End Class

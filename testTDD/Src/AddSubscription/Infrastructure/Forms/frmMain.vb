@@ -18,20 +18,46 @@ Public Class frmMain
     End Sub
 
     Private Sub emplenarComboEmpreses()
-        Dim query = "SELECT Name FROM Empreses"
+        Dim query = "SELECT id, Name, quantity FROM Empreses"
         Dim ds As DataTable = _conn.doSelectQuery(query)
         cmbEmpreses.DataSource = ds
         cmbEmpreses.DisplayMember = "Name"
         cmbEmpreses.ValueMember = "Name"
+        cmbEmpreses.DropDownStyle = ComboBoxStyle.DropDownList
+        cmbEmpreses.SelectedIndex = -1
+        actualizarcontador()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim empresa As String = cmbEmpreses.SelectedValue.ToString
-        Dim quantitat As Integer = numQuantity.Value
-        Dim addsub = New addSubscriptionToBusiness(New VOEmpreses(empresa), New VOSubscripcions(quantitat))
+        Dim addsub = New addSubscriptionToBusiness(getEmpresa, New VOSubscripcions(numQuantity.Value))
+        emplenarComboEmpreses()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        frmConsult.Show()
+        Dim frm As frmConsult = New frmConsult(getEmpresa)
+        frm.Show()
+    End Sub
+
+    Private Function getEmpresa() As Empresa
+
+        Dim emp As DataRowView = cmbEmpreses.SelectedItem
+        Dim newempresa As Empresa
+        With emp.Row
+            newempresa = New Empresa(.Item("id"), .Item("Name"), .Item("quantity"))
+        End With
+        Return newempresa
+    End Function
+
+    Private Sub cmbEmpreses_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEmpreses.SelectedIndexChanged
+        actualizarcontador()
+    End Sub
+
+    Private Sub actualizarcontador()
+        If cmbEmpreses.SelectedIndex <> -1 Then
+            lblDisp.Visible = True
+            lblDisp.Text = $"Tiene {getEmpresa.Quantity} suscripciones"
+        Else
+            lblDisp.Visible = False
+        End If
     End Sub
 End Class
