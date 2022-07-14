@@ -29,7 +29,7 @@ Public Class frmMain
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim addsub = New addSubscriptionToBusiness(getEmpresa, New VOSubscripcions(numQuantity.Value))
+        Dim addsub = New addSubscriptionToBusiness(New SubsToBusinessDatabase, New AddTransactionBusinessDatabase, getEmpresa, New VOSubscripcions(numQuantity.Value))
         emplenarComboEmpreses()
     End Sub
 
