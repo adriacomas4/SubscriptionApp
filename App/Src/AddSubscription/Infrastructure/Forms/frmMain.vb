@@ -9,13 +9,12 @@ Public Class frmMain
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         _conn = New DBConnection()
-        OnLoad()
     End Sub
 
-    Private Sub OnLoad()
+    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
         emplenarComboEmpreses()
-
     End Sub
+
 
     Private Sub emplenarComboEmpreses()
         Dim query = "SELECT id, Name, quantity FROM Empreses"
@@ -29,7 +28,9 @@ Public Class frmMain
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim addsub = New addSubscriptionToBusiness(New SubsToBusinessDatabase, New AddTransactionBusinessDatabase, getEmpresa, New VOSubscripcions(numQuantity.Value))
+        Dim emp As Empresa = getEmpresa()
+        Dim addsub = New addSubscriptionToBusiness(New SubsToBusinessDatabase, New AddTransactionBusinessDatabase,
+                                                   emp, numQuantity.Value)
         emplenarComboEmpreses()
     End Sub
 
@@ -38,16 +39,6 @@ Public Class frmMain
         frm.Show()
     End Sub
 
-    Private Function getEmpresa() As Empresa
-
-        Dim emp As DataRowView = cmbEmpreses.SelectedItem
-        Dim newempresa As Empresa
-        With emp.Row
-            newempresa = New Empresa(.Item("id"), .Item("Name"), .Item("quantity"))
-        End With
-        Return newempresa
-    End Function
-
     Private Sub cmbEmpreses_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEmpreses.SelectedIndexChanged
         actualizarcontador()
     End Sub
@@ -55,9 +46,21 @@ Public Class frmMain
     Private Sub actualizarcontador()
         If cmbEmpreses.SelectedIndex <> -1 Then
             lblDisp.Visible = True
-            lblDisp.Text = $"Tiene {getEmpresa.Quantity} suscripciones"
+            lblDisp.Text = $"Tiene {getEmpresa.Quantity.value} suscripciones"
         Else
             lblDisp.Visible = False
         End If
     End Sub
+
+
+    Private Function getEmpresa() As Empresa
+
+        Dim emp As DataRowView = cmbEmpreses.SelectedItem
+        Dim newempresa As Empresa
+        With emp.Row
+            newempresa = New Empresa(New EmpresaId(.Item("id")), New EmpresaName(.Item("Name")), New EmpresaQuantity(.Item("quantity")))
+        End With
+        Return newempresa
+    End Function
+
 End Class
