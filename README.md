@@ -1,9 +1,6 @@
 # SubscriptionApp
 Permite que las empresas hagan suscripciones y permite consultarlas
 
-Creación de tablas SQL Server:
-
-
 ### Creación de tablas SQL Server ###
 
 ```
