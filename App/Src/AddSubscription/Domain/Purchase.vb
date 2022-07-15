@@ -1,41 +1,42 @@
-﻿Public Class Transaction
+﻿Public Class Purchase
 
-    Private _quantity As TransQuantity
-    Private _price As TransPrice
-    Private _empresa As TransBusiness
-    Private _datetrans As TransDate
+    Private _quantity As VOPurchaseQuantity
+    Private _price As VOPruchasePrice
+    Private _empresa As VOPurchaseBusiness
+    Private _datetrans As VOPurchaseDate
 
 #Region "Propiedades"
-    Public ReadOnly Property Quantity As TransQuantity
+    Public ReadOnly Property Quantity As VOPurchaseQuantity
         Get
             Return _quantity
         End Get
     End Property
 
-    Public ReadOnly Property Price As TransPrice
+    Public ReadOnly Property Price As VOPruchasePrice
         Get
             Return _price
         End Get
     End Property
 
-    Public ReadOnly Property Empresa As TransBusiness
+    Public ReadOnly Property Empresa As VOPurchaseBusiness
         Get
             Return _empresa
         End Get
     End Property
 
-    Public ReadOnly Property Datetrans As TransDate
+    Public ReadOnly Property Datetrans As VOPurchaseDate
         Get
             Return _datetrans
         End Get
     End Property
 #End Region
 
-    Sub New(quantity As TransQuantity, empresa As TransBusiness)
+    Sub New(quantity As VOPurchaseQuantity, empresa As VOPurchaseBusiness)
         _quantity = quantity
         _empresa = empresa
+        _datetrans = New VOPurchaseDate(Date.Now.ToString("yyyy/MM/dd"))
+        _price = New VOPruchasePrice(0)
         setPrice()
-        _datetrans = New TransDate(Date.Now)
     End Sub
 
 

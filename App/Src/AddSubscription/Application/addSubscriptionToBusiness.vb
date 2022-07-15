@@ -1,9 +1,9 @@
 ﻿Public Class addSubscriptionToBusiness
 
-    Sub New(subtobusRepo As SubsToBusinessRepository, transactionRepo As addTransactionBusinessRepository, empresa As Empresa, quantity As Integer)
-        subtobusRepo.Add(empresa.Id.Value, quantity)
-        Dim trans As Transaction = New Transaction(New TransQuantity(quantity), New TransBusiness(empresa.Id.Value))
-        transactionRepo.Add(trans)
+    Sub New(subtobusRepo As BusinessRepository, transactionRepo As PurchaseRepository, empresa As Business, quantity As Integer)
+        subtobusRepo.Create(empresa.Id.Value, quantity)
+        Dim pur As Purchase = New Purchase(New VOPurchaseQuantity(quantity), New VOPurchaseBusiness(empresa.Id.Value))
+        transactionRepo.Create(pur)
     End Sub
 
 End Class

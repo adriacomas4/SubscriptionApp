@@ -1,4 +1,4 @@
-﻿Public Class EmpresaQuantity
+﻿Public Class VOBusinessQuantity
 
     Private _quantity As Object
 

@@ -1,4 +1,4 @@
-﻿Public Class TransPrice
+﻿Public Class VOPruchasePrice
 
     Private _price As Integer
 
@@ -6,8 +6,8 @@
         Get
             Return _price
         End Get
-        Set(value As Integer)
-            _price = value
+        Set(valorprecio As Integer)
+            _price = valorprecio
         End Set
     End Property
 

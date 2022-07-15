@@ -1,4 +1,4 @@
-﻿Public Class TransBusiness
+﻿Public Class VOPurchaseBusiness
     Private _bus As Integer
 
     Public ReadOnly Property Value As Integer

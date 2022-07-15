@@ -1,4 +1,4 @@
-﻿Public Class TransQuantity
+﻿Public Class VOPurchaseQuantity
 
     Private _quantity As Integer
 
