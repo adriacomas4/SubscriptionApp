@@ -1,7 +1,7 @@
 ﻿Public Class getAllBusiness
 
-    Private _repo As BusinessRepository
-    Sub New(business As BusinessRepository)
+    Private _repo As IBusinessRepository
+    Sub New(business As IBusinessRepository)
         _repo = business
     End Sub
 

@@ -1,7 +1,4 @@
-﻿Imports Abp.Domain.Values
-
-Public Class VOBusinessId
-    Inherits ValueObject
+﻿Public Class VOBusinessId
     Private _id As Integer
 
     Public ReadOnly Property Value
@@ -14,7 +11,4 @@ Public Class VOBusinessId
         _id = id
     End Sub
 
-    Protected Overrides Function GetAtomicValues() As IEnumerable(Of Object)
-        Throw New NotImplementedException()
-    End Function
 End Class

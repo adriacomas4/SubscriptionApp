@@ -8,7 +8,7 @@ Namespace TestSubscriptionApp
         <TestMethod>
         Sub TestSub()
             'Dim e As Empresa = New Empresa(1, "prova", 5)
-            Dim mock As Mock(Of BusinessRepository)
+            Dim mock As Mock(Of IBusinessRepository)
             mock.Setup(Sub(x) x.Create(1, 2))
 
         End Sub

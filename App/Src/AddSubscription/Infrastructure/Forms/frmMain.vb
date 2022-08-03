@@ -17,7 +17,7 @@ Public Class frmMain
 
 
     Private Sub emplenarComboEmpreses()
-        Dim ds As DataTable = New getAllBusiness(New BusinessDatabase).getBusiness
+        Dim ds As DataTable = New getAllBusiness(New BusinessRepository).getBusiness
         cmbEmpreses.DataSource = ds
         cmbEmpreses.DisplayMember = "name"
         cmbEmpreses.ValueMember = "name"
@@ -29,7 +29,7 @@ Public Class frmMain
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If cmbEmpreses.SelectedIndex <> -1 Then
             Dim emp As Business = getEmpresa()
-            Dim addsub = New addSubscriptionToBusiness(New BusinessDatabase, New PurchaseDatabase, emp, numQuantity.Value)
+            Dim addsub = New addSubscriptionToBusiness(New BusinessRepository, New PurchaseRepository, emp, numQuantity.Value)
             numQuantity.Value = 0
             emplenarComboEmpreses()
         Else
